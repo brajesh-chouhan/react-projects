@@ -12,14 +12,23 @@
 
     <script src="node_modules/react/umd/react.development.js"></script>
     <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
 
-    <script>
+    <script src="text/babel">
+        function Hello(){
+            return React.createElement(
+                'h1',
+                null,
+                'helloooo react'
+            );
+        }
         //creat react element 
-        const el=React.createElement(
-            'h1',
-            null,
-            'Hello react!'
-        )
+        //const el=React.createElement(
+        //    'h1',
+        //    null,
+        //    'Hello react!'
+       // )
 
         //Get dom element by id 
         const container=document.getElementById('root');
@@ -28,7 +37,9 @@
         const root=ReactDOM.createRoot(container);
 
         //render our react element in virtual dom root 
-        root.render(el);
+        root.render(
+            React.createElement(Hello)
+        );
 
 
     </script>
